@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ArchitLocker Console - Educational Ransomware Simulation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="SAFE, educational ransomware simulation UI for cybersecurity awareness. No real files are encrypted."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="no-select">
+  <noscript>
+    <div class="no-js-warning">
+      This ransomware simulation requires JavaScript.  
+      Enable JavaScript and reload the page.
+    </div>
+  </noscript>
+
+  <!-- ROOT WRAPPER -->
+  <div id="simulation-root">
+    <!-- BOOT SCREEN / INTRO -->
+    <div id="boot-screen" class="screen screen--active">
+      <div class="boot-wrapper">
+        <div class="boot-logo">
+          <pre>
+   ▄████  ██▀███   ▄████▄   ▄▄▄      ██░ ██  ██▓▄▄▄█████▓
+  ██▒ ▀█▒▓██ ▒ ██▒▒██▀ ▀█  ▒████▄   ▓██░ ██▒▓██▒▓  ██▒ ▓▒
+ ▒██░▄▄▄░▓██ ░▄█ ▒▒▓█    ▄ ▒██  ▀█▄ ▒██▀▀██░▒██▒▒ ▓██░ ▒░
+ ░▓█  ██▓▒██▀▀█▄  ▒▓▓▄ ▄██▒░██▄▄▄▄██░▓█ ░██ ░██░░ ▓██▓ ░ 
+ ░▒▓███▀▒░██▓ ▒██▒▒ ▓███▀ ░ ▓█   ▓██▒▓█▒░██▓░██░  ▒██▒ ░ 
+  ░▒   ▒ ░ ▒▓ ░▒▓░░ ░▒ ▒  ░ ▒▒   ▓▒█░▒ ░░▒░▒░▓    ▒ ░░   
+   ░   ░   ░▒ ░ ▒░  ░  ▒     ▒   ▒▒ ░▒ ░▒░ ░ ▒ ░    ░    
+ ░ ░   ░   ░░   ░ ░          ░   ▒   ░  ░░ ░ ▒ ░  ░      
+       ░    ░     ░ ░            ░  ░░  ░  ░ ░           
+                ░                                         
+          </pre>
+        </div>
+
+        <div class="boot-text">
+          <h1>ARCHITLOCKER v3.1</h1>
+          <p>Educational Ransomware Console Simulator</p>
+
+          <p class="boot-sub">
+            This interface <strong>looks and behaves like</strong> a real ransomware console,
+            but it is a <strong>100% safe visual simulation</strong>.  
+            <br />
+            No files are encrypted. No data is collected. No system changes are made.
+          </p>
+
+          <div class="boot-instructions">
+            <p>Controls:</p>
+            <ul>
+              <li><span>&gt;</span> Press <strong>ENTER SIMULATION</strong> to continue</li>
+              <li><span>&gt;</span> Press <strong>Esc</strong> anytime to exit full-screen</li>
+              <li><span>&gt;</span> Use <strong>Ctrl + Cmd + F</strong> to toggle full-screen on macOS</li>
+            </ul>
+          </div>
+
+          <button id="enter-sim-btn" class="btn btn--primary">
+            ENTER SIMULATION
+          </button>
+
+          <p class="boot-disclaimer">
+            ⚠ For cybersecurity awareness and educational demos only.  
+            Do <em>not</em> use this UI to mislead or scare people outside a safe context.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN RANSOMWARE SCREEN -->
+    <div id="ransom-screen" class="screen">
+      <!-- GLITCH OVERLAY LAYER -->
+      <div class="glitch-layer" aria-hidden="true"></div>
+
+      <!-- TOP BAR -->
+      <header class="rw-top-bar">
+        <div class="rw-top-bar__left">
+          <div class="rw-logo-mark">
+            <span class="rw-logo-skull">☠</span>
+          </div>
+          <div class="rw-title-block">
+            <h1 class="rw-title">ARCHITLOCKER CONSOLE</h1>
+            <p class="rw-subtitle">
+              BABLULELO BABLALA RANSOMWARE FRAMEWORK &mdash; SIMULATED BUILD 3.1
+            </p>
+          </div>
+        </div>
+
+        <div class="rw-top-bar__right">
+          <div class="rw-badge rw-badge--safe">
+            SIMULATION MODE
+          </div>
+          <div class="rw-meta">
+            <span class="rw-meta__label">LOCAL TIME:</span>
+            <span id="clock" class="rw-meta__value">--:--:--</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- MAIN BODY -->
+      <main class="rw-main">
+        <div class="rw-columns">
+          <!-- LEFT COLUMN -->
+          <section class="rw-column rw-column--left">
+            <!-- WARNING PANEL -->
+            <article class="rw-panel rw-panel--warning">
+              <header class="rw-panel__header">
+                <h2>YOUR FILES HAVE BEEN ENCRYPTED</h2>
+                <span class="rw-panel__tag">CRITICAL</span>
+              </header>
+              <div class="rw-panel__body">
+                <p class="rw-warning-text">
+                  All of your important files (documents, photos, databases) have been
+                  <strong>encrypted</strong> with a military-grade cipher.
+                  You can no longer access them until you obtain the <strong>decryption key</strong>.
+                </p>
+                <p class="rw-warning-text">
+                  To recover your files, you must follow the instructions below.  
+                  Any attempt to modify, rename, or restore files may result in
+                  <span class="rw-highlight-danger">permanent data loss</span>.
+                </p>
+
+                <ol class="rw-steps">
+                  <li>Do <strong>not</strong> shut down or unplug this machine.</li>
+                  <li>Do <strong>not</strong> run third-party decryptors or antivirus tools.</li>
+                  <li>Prepare a cryptocurrency wallet that supports <strong>Bitcoin</strong>.</li>
+                  <li>Send the specified amount to the address shown in the PAYMENT section.</li>
+                  <li>Wait for the automated system to confirm your payment.</li>
+                  <li>Once confirmed, click <strong>"Run Decryptor"</strong> to begin restoration.</li>
+                </ol>
+
+                <p class="rw-warning-note">
+                  This demo mimics real ransomware behavior for training purposes.  
+                  <strong>No real encryption</strong> is performed.
+                </p>
+              </div>
+            </article>
+
+            <!-- TIMER PANEL -->
+            <article class="rw-panel rw-panel--timer">
+              <header class="rw-panel__header">
+                <h2>DEADLINE FOR DISCOUNTED RECOVERY</h2>
+                <span class="rw-panel__tag rw-panel__tag--urgent">72 HOURS</span>
+              </header>
+              <div class="rw-panel__body rw-timer-body">
+                <div class="rw-timer-main">
+                  <span id="countdown" class="rw-timer-display">71:59:59</span>
+                  <p class="rw-timer-caption">
+                    Time remaining before price doubles and partial keys are destroyed.
+                  </p>
+                </div>
+                <div class="rw-timer-extra">
+                  <ul>
+                    <li><span class="rw-dot rw-dot--ok"></span>Within deadline: <strong>$500</strong> in BTC</li>
+                    <li><span class="rw-dot rw-dot--warn"></span>After deadline: <strong>$1000</strong> in BTC</li>
+                    <li><span class="rw-dot rw-dot--danger"></span>After 7 days: <strong>keys permanently deleted</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <!-- PAYMENT PANEL -->
+            <article class="rw-panel rw-panel--payment">
+              <header class="rw-panel__header">
+                <h2>PAYMENT DETAILS</h2>
+                <span class="rw-panel__tag rw-panel__tag--btc">BTC</span>
+              </header>
+              <div class="rw-panel__body">
+                <p class="rw-payment-intro">
+                  To restore your files, send exactly <strong>$500 USD</strong>
+                  (or equivalent in Bitcoin) to the address below.
+                </p>
+
+                <div class="rw-payment-box">
+                  <label class="rw-payment-label">Bitcoin Address</label>
+                  <div class="rw-payment-row">
+                    <span id="btc-address" class="rw-payment-value">
+                      1ArchitLock3rMimoticLabsDemoAddr355
+                    </span>
+                    <button id="copy-btc-btn" class="btn btn--small">
+                      COPY
+                    </button>
+                  </div>
+                </div>
+
+                <div class="rw-payment-tips">
+                  <p>Payment rules:</p>
+                  <ul>
+                    <li>Use a wallet that supports on-chain BTC transfers.</li>
+                    <li>Do <strong>not</strong> send from an exchange that blocks suspicious activity.</li>
+                    <li>Network confirmations may take 10–60 minutes.</li>
+                    <li>This is a <strong>simulation</strong>: no funds are actually required.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </section>
+
+          <!-- RIGHT COLUMN -->
+          <section class="rw-column rw-column--right">
+            <!-- SYSTEM INFO PANEL -->
+            <article class="rw-panel rw-panel--system">
+              <header class="rw-panel__header">
+                <h2>VICTIM SYSTEM PROFILE</h2>
+                <span class="rw-panel__tag">LIVE</span>
+              </header>
+              <div class="rw-panel__body rw-system-body">
+                <div class="rw-system-grid">
+                  <div class="rw-system-field">
+                    <span class="rw-system-label">Hostname</span>
+                    <span id="sys-hostname" class="rw-system-value">archit-macmini</span>
+                  </div>
+                  <div class="rw-system-field">
+                    <span class="rw-system-label">Username</span>
+                    <span id="sys-user" class="rw-system-value">archit</span>
+                  </div>
+                  <div class="rw-system-field">
+                    <span class="rw-system-label">OS</span>
+                    <span id="sys-os" class="rw-system-value">macOS Simulation 13.7</span>
+                  </div>
+                  <div class="rw-system-field">
+                    <span class="rw-system-label">Locale</span>
+                    <span id="sys-locale" class="rw-system-value">en-IN</span>
+                  </div>
+                  <div class="rw-system-field">
+                    <span class="rw-system-label">IP Address</span>
+                    <span id="sys-ip" class="rw-system-value">192.168.0.42</span>
+                  </div>
+                  <div class="rw-system-field">
+                    <span class="rw-system-label">Session ID</span>
+                    <span id="sys-session" class="rw-system-value">MIM0TIC-SESSION-DEMO</span>
+                  </div>
+                </div>
+
+                <div class="rw-metrics">
+                  <div class="rw-metric">
+                    <span class="rw-metric-label">CPU Load</span>
+                    <div class="rw-metric-bar">
+                      <div id="metric-cpu" class="rw-metric-bar__fill"></div>
+                    </div>
+                  </div>
+                  <div class="rw-metric">
+                    <span class="rw-metric-label">Memory Usage</span>
+                    <div class="rw-metric-bar">
+                      <div id="metric-mem" class="rw-metric-bar__fill"></div>
+                    </div>
+                  </div>
+                  <div class="rw-metric">
+                    <span class="rw-metric-label">Disk Usage</span>
+                    <div class="rw-metric-bar">
+                      <div id="metric-disk" class="rw-metric-bar__fill"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- ENCRYPTION STATUS PANEL -->
+            <article class="rw-panel rw-panel--status">
+              <header class="rw-panel__header">
+                <h2>ENCRYPTION STATUS</h2>
+                <span class="rw-panel__tag rw-panel__tag--active">ACTIVE</span>
+              </header>
+              <div class="rw-panel__body rw-status-body">
+                <div class="rw-status-stats">
+                  <div class="rw-status-stat">
+                    <span class="rw-status-label">Files Scanned</span>
+                    <span id="stat-scanned" class="rw-status-value">0</span>
+                  </div>
+                  <div class="rw-status-stat">
+                    <span class="rw-status-label">Files Encrypted</span>
+                    <span id="stat-encrypted" class="rw-status-value rw-status-value--danger">0</span>
+                  </div>
+                  <div class="rw-status-stat">
+                    <span class="rw-status-label">Drives Affected</span>
+                    <span id="stat-drives" class="rw-status-value">0</span>
+                  </div>
+                </div>
+
+                <div class="rw-status-progress">
+                  <div class="rw-status-progress__label-row">
+                    <span>Overall Encryption Progress</span>
+                    <span id="stat-percent" class="rw-status-percent">0%</span>
+                  </div>
+                  <div class="rw-status-progress__bar">
+                    <div id="status-progress-bar" class="rw-status-progress__fill"></div>
+                  </div>
+                </div>
+
+                <p class="rw-status-note">
+                  In this demo, the progress bar and file counts are <strong>simulated</strong>.
+                  No real files are touched.
+                </p>
+              </div>
+            </article>
+
+            <!-- CONTROLS PANEL -->
+            <article class="rw-panel rw-panel--controls">
+              <header class="rw-panel__header">
+                <h2>CONTROL CONSOLE</h2>
+                <span class="rw-panel__tag">OPERATOR</span>
+              </header>
+              <div class="rw-panel__body rw-controls-body">
+                <div class="rw-controls-row">
+                  <button id="btn-test-encryption" class="btn btn--danger">
+                    REPLAY ENCRYPTION SEQUENCE
+                  </button>
+                  <button id="btn-test-decrypt" class="btn btn--accent">
+                    RUN DECRYPTOR (DEMO)
+                  </button>
+                </div>
+
+                <div class="rw-controls-row">
+                  <button id="btn-toggle-glitch" class="btn btn--outline">
+                    TOGGLE GLITCH EFFECT
+                  </button>
+                  <button id="btn-inject-log" class="btn btn--outline">
+                    INJECT RANDOM LOG EVENT
+                  </button>
+                </div>
+
+                <p class="rw-controls-hint">
+                  All controls are <strong>visual only</strong> and do not execute real ransomware logic.
+                </p>
+              </div>
+            </article>
+          </section>
+        </div>
+
+        <!-- CONSOLE LOG PANEL -->
+        <section class="rw-console-panel">
+          <header class="rw-console-header">
+            <span>[ ARCHITLOCKER v3.1 :: EVENT LOG ]</span>
+            <span id="console-status" class="rw-console-status">IDLE</span>
+          </header>
+          <div id="console-log" class="rw-console-body">
+            <!-- Populated by script.js with fake log lines -->
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="rw-footer">
+        <p class="rw-footer-text">
+          This interface is a <strong>non-malicious simulation</strong> for cybersecurity
+          education and UX experimentation.  
+          It does <strong>not</strong> encrypt files, steal data, or perform any destructive actions.
+        </p>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
+
